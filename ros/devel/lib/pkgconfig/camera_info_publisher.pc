@@ -1,0 +1,8 @@
+prefix=/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel
+
+Name: camera_info_publisher
+Description: Description of camera_info_publisher
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/lib 
+Requires: 

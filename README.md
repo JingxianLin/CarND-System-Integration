@@ -1,4 +1,21 @@
+Bits-Please
+----------------------
 This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
+
+### Team Members 
+This repository is maintained by the following:
+- [Andrew Raharjo](https://github.com/andrewraharjo)
+- [Jingxian Lin](https://github.com/JingxianLin)
+- [Raymond Linn](https://github.com/raymond-linn)
+- [Jun Zhu](https://github.com/zhujun98)
+- [Mahmood Salah](https://github.com/Mahmoodsalah)
+
+### Team Members Email
+- [Andrew Raharjo](andrewraharjo@gmail.com)
+- [Jingxian Lin](star0.lin@gmail.com)
+- [Raymond Linn](raymondlinn@gmail.com)
+- [Jun Zhu](zhujun981661@gmail.com)
+- [Mahmood Salah](mahmoodsalah89@gmail.com)
 
 ### Installation 
 
@@ -26,7 +43,7 @@ git clone https://github.com/udacity/carnd_capstone.git
 
 2. Install python dependencies
 ```bash
-cd carnd_capstone
+cd CarNd-Capstone
 pip install -r requirements.txt
 ```
 3. Make and run styx
@@ -38,10 +55,11 @@ roslaunch launch/styx.launch
 ```
 4. Run the simulator
 ```bash
-unzip lights_no_cars.zip
-cd lights_no_cars
-chmod +x ros_test.x86_64
-./ros_test.x86_64
+unzip linux_system_int
+cd linux_system_int
+chmod +x system_integration.x86_64
+./system_integration.x86_64
 ```
+
 
 

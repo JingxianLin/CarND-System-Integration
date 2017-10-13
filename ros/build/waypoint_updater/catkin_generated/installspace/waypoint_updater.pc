@@ -1,8 +1,8 @@
-prefix=/home/student/catkin_ws/src/CarND-Capstone/ros/install
+prefix=/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/install
 
 Name: waypoint_updater
 Description: Description of waypoint_updater
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/student/catkin_ws/src/CarND-Capstone/ros/install/lib 
+Libs: -L/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/install/lib 
 Requires: 
