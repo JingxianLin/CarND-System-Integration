@@ -10,13 +10,6 @@ This repository is maintained by the following:
 - [Jun Zhu](https://github.com/zhujun98)
 - [Mahmood Salah](https://github.com/Mahmoodsalah)
 
-### Team Members Email
-- [Andrew Raharjo](andrewraharjo@gmail.com)
-- [Jingxian Lin](star0.lin@gmail.com)
-- [Raymond Linn](raymondlinn@gmail.com)
-- [Jun Zhu](zhujun981661@gmail.com)
-- [Mahmood Salah](mahmoodsalah89@gmail.com)
-
 ### Installation 
 
 * Be sure that your workstation is running Ubuntu 16.04 Xenial Xerus or Ubuntu 14.04 Trusty Tahir. [Ubuntu downloads can be found here](https://www.ubuntu.com/download/desktop). 

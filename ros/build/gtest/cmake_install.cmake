@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

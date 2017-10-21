@@ -1,8 +1,8 @@
-prefix=/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/install
+prefix=/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/install
 
 Name: styx_msgs
 Description: Description of styx_msgs
 Version: 0.0.0
-Cflags: -I/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/install/include
-Libs: -L/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/install/lib 
+Cflags: -I/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/install/include
+Libs: -L/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/install/lib 
 Requires: 

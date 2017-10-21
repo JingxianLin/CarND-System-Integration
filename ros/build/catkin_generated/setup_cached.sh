@@ -7,9 +7,9 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel:$CMAKE_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH="/opt/ros/kinetic/lib:/usr/local/cuda-8.0/lib64:/usr/local/cuda/lib64"
 export PATH="/opt/ros/kinetic/bin:/usr/local/cuda-8.0/bin:/usr/local/polysync/bin:/home/metal-box/bin:/home/metal-box/.local/bin:/usr/local/polysync/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
-export PWD="/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/src:$ROS_PACKAGE_PATH"
+export PWD="/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/src:$ROS_PACKAGE_PATH"

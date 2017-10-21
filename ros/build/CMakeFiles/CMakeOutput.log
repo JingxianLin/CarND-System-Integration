@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/3.2.3/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/3.2.3/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,35 +23,35 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/3.2.3/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/3.2.3/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec489534419/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec489534419.dir/build.make CMakeFiles/cmTryCompileExec489534419.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec489534419.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec489534419.dir/testCCompiler.c.o   -c /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTryCompileExec489534419
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec489534419.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec489534419.dir/testCCompiler.c.o  -o cmTryCompileExec489534419 -rdynamic 
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1893596379/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1893596379.dir/build.make CMakeFiles/cmTryCompileExec1893596379.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1893596379.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1893596379.dir/testCCompiler.c.o   -c /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec1893596379
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1893596379.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1893596379.dir/testCCompiler.c.o  -o cmTryCompileExec1893596379 -rdynamic 
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2153209282/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2153209282.dir/build.make CMakeFiles/cmTryCompileExec2153209282.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2153209282.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2153209282.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.2/Modules/CMakeCCompilerABI.c
-Linking C executable cmTryCompileExec2153209282
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2153209282.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTryCompileExec2153209282.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2153209282 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec4239438832/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4239438832.dir/build.make CMakeFiles/cmTryCompileExec4239438832.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4239438832.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec4239438832.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.2/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec4239438832
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4239438832.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTryCompileExec4239438832.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec4239438832 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -61,24 +61,24 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2153209282' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdgOXyR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec2153209282 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTryCompileExec2153209282.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4239438832' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccELAbcY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec4239438832 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTryCompileExec4239438832.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec2153209282/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec2153209282.dir/build.make CMakeFiles/cmTryCompileExec2153209282.dir/build]
-  ignore line: [make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building C object CMakeFiles/cmTryCompileExec2153209282.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2153209282.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.2/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTryCompileExec2153209282]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2153209282.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTryCompileExec2153209282.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2153209282 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec4239438832/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec4239438832.dir/build.make CMakeFiles/cmTryCompileExec4239438832.dir/build]
+  ignore line: [make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec4239438832.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec4239438832.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.2/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec4239438832]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4239438832.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTryCompileExec4239438832.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec4239438832 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -88,13 +88,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2153209282' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdgOXyR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec2153209282 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTryCompileExec2153209282.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4239438832' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccELAbcY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec4239438832 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTryCompileExec4239438832.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccdgOXyR.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccELAbcY.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -112,7 +112,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec2153209282] ==> ignore
+    arg [cmTryCompileExec4239438832] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -124,7 +124,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTryCompileExec2153209282.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec4239438832.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -156,18 +156,18 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1689818384/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1689818384.dir/build.make CMakeFiles/cmTryCompileExec1689818384.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1689818384.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTryCompileExec1689818384.dir/feature_tests.c.o   -c /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/feature_tests.c
-Linking C executable cmTryCompileExec1689818384
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1689818384.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec1689818384.dir/feature_tests.c.o  -o cmTryCompileExec1689818384 -rdynamic 
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1208330782/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1208330782.dir/build.make CMakeFiles/cmTryCompileExec1208330782.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1208330782.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTryCompileExec1208330782.dir/feature_tests.c.o   -c /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/feature_tests.c
+Linking C executable cmTryCompileExec1208330782
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1208330782.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1208330782.dir/feature_tests.c.o  -o cmTryCompileExec1208330782 -rdynamic 
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -177,18 +177,18 @@ make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1402639798/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1402639798.dir/build.make CMakeFiles/cmTryCompileExec1402639798.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1402639798.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTryCompileExec1402639798.dir/feature_tests.c.o   -c /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/feature_tests.c
-Linking C executable cmTryCompileExec1402639798
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1402639798.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec1402639798.dir/feature_tests.c.o  -o cmTryCompileExec1402639798 -rdynamic 
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2756900170/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2756900170.dir/build.make CMakeFiles/cmTryCompileExec2756900170.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2756900170.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTryCompileExec2756900170.dir/feature_tests.c.o   -c /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/feature_tests.c
+Linking C executable cmTryCompileExec2756900170
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2756900170.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec2756900170.dir/feature_tests.c.o  -o cmTryCompileExec2756900170 -rdynamic 
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -198,18 +198,18 @@ make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec653914499/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec653914499.dir/build.make CMakeFiles/cmTryCompileExec653914499.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec653914499.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTryCompileExec653914499.dir/feature_tests.c.o   -c /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/feature_tests.c
-Linking C executable cmTryCompileExec653914499
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec653914499.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec653914499.dir/feature_tests.c.o  -o cmTryCompileExec653914499 -rdynamic 
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3108557018/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3108557018.dir/build.make CMakeFiles/cmTryCompileExec3108557018.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3108557018.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTryCompileExec3108557018.dir/feature_tests.c.o   -c /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/feature_tests.c
+Linking C executable cmTryCompileExec3108557018
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3108557018.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3108557018.dir/feature_tests.c.o  -o cmTryCompileExec3108557018 -rdynamic 
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -217,32 +217,32 @@ make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2913944663/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2913944663.dir/build.make CMakeFiles/cmTryCompileExec2913944663.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec2913944663.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2913944663.dir/testCXXCompiler.cxx.o -c /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTryCompileExec2913944663
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2913944663.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTryCompileExec2913944663.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec2913944663 -rdynamic 
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2728865685/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2728865685.dir/build.make CMakeFiles/cmTryCompileExec2728865685.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2728865685.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2728865685.dir/testCXXCompiler.cxx.o -c /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec2728865685
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2728865685.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTryCompileExec2728865685.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec2728865685 -rdynamic 
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec3689396750/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3689396750.dir/build.make CMakeFiles/cmTryCompileExec3689396750.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec3689396750.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3689396750.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTryCompileExec3689396750
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3689396750.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTryCompileExec3689396750.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3689396750 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3379506638/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3379506638.dir/build.make CMakeFiles/cmTryCompileExec3379506638.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3379506638.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3379506638.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec3379506638
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3379506638.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTryCompileExec3379506638.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3379506638 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -252,24 +252,24 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3689396750' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCHnLGf.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3689396750 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTryCompileExec3689396750.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3379506638' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYeiizx.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3379506638 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTryCompileExec3379506638.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec3689396750/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3689396750.dir/build.make CMakeFiles/cmTryCompileExec3689396750.dir/build]
-  ignore line: [make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec3689396750.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3689396750.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTryCompileExec3689396750]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3689396750.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTryCompileExec3689396750.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3689396750 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec3379506638/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3379506638.dir/build.make CMakeFiles/cmTryCompileExec3379506638.dir/build]
+  ignore line: [make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec3379506638.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3379506638.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec3379506638]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3379506638.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTryCompileExec3379506638.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3379506638 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -279,13 +279,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3689396750' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCHnLGf.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3689396750 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTryCompileExec3689396750.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3379506638' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYeiizx.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3379506638 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTryCompileExec3379506638.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccCHnLGf.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccYeiizx.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -303,7 +303,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec3689396750] ==> ignore
+    arg [cmTryCompileExec3379506638] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -315,7 +315,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTryCompileExec3689396750.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec3379506638.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -345,18 +345,18 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1744851196/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1744851196.dir/build.make CMakeFiles/cmTryCompileExec1744851196.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec1744851196.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTryCompileExec1744851196.dir/feature_tests.cxx.o -c /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTryCompileExec1744851196
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1744851196.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTryCompileExec1744851196.dir/feature_tests.cxx.o  -o cmTryCompileExec1744851196 -rdynamic 
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3628874478/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3628874478.dir/build.make CMakeFiles/cmTryCompileExec3628874478.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3628874478.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTryCompileExec3628874478.dir/feature_tests.cxx.o -c /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTryCompileExec3628874478
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3628874478.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTryCompileExec3628874478.dir/feature_tests.cxx.o  -o cmTryCompileExec3628874478 -rdynamic 
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -419,18 +419,18 @@ make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec984113897/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec984113897.dir/build.make CMakeFiles/cmTryCompileExec984113897.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec984113897.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTryCompileExec984113897.dir/feature_tests.cxx.o -c /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTryCompileExec984113897
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec984113897.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTryCompileExec984113897.dir/feature_tests.cxx.o  -o cmTryCompileExec984113897 -rdynamic 
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec4020867299/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4020867299.dir/build.make CMakeFiles/cmTryCompileExec4020867299.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec4020867299.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTryCompileExec4020867299.dir/feature_tests.cxx.o -c /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTryCompileExec4020867299
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4020867299.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTryCompileExec4020867299.dir/feature_tests.cxx.o  -o cmTryCompileExec4020867299 -rdynamic 
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -493,18 +493,18 @@ make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec3566584107/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3566584107.dir/build.make CMakeFiles/cmTryCompileExec3566584107.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec3566584107.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTryCompileExec3566584107.dir/feature_tests.cxx.o -c /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTryCompileExec3566584107
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3566584107.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTryCompileExec3566584107.dir/feature_tests.cxx.o  -o cmTryCompileExec3566584107 -rdynamic 
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3031802702/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3031802702.dir/build.make CMakeFiles/cmTryCompileExec3031802702.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3031802702.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTryCompileExec3031802702.dir/feature_tests.cxx.o -c /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTryCompileExec3031802702
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3031802702.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTryCompileExec3031802702.dir/feature_tests.cxx.o  -o cmTryCompileExec3031802702 -rdynamic 
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -565,32 +565,32 @@ make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
 Determining if files pthread.h exist passed with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2024876751/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2024876751.dir/build.make CMakeFiles/cmTryCompileExec2024876751.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2024876751.dir/CheckIncludeFiles.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2024876751.dir/CheckIncludeFiles.c.o   -c /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
-Linking C executable cmTryCompileExec2024876751
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2024876751.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec2024876751.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec2024876751 -rdynamic 
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec659966765/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec659966765.dir/build.make CMakeFiles/cmTryCompileExec659966765.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec659966765.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec659966765.dir/CheckIncludeFiles.c.o   -c /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec659966765
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec659966765.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec659966765.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec659966765 -rdynamic 
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1632451839/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1632451839.dir/build.make CMakeFiles/cmTryCompileExec1632451839.dir/build
-make[1]: Entering directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
-/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1632451839.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1632451839.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.2/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec1632451839
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1632451839.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1632451839.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1632451839 -rdynamic -lpthread 
-make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2267179091/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2267179091.dir/build.make CMakeFiles/cmTryCompileExec2267179091.dir/build
+make[1]: Entering directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2267179091.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2267179091.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.2/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2267179091
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2267179091.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2267179091.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2267179091 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/build/CMakeFiles/CMakeTmp'
 
 

@@ -1,31 +1,73 @@
 from styx_msgs.msg import TrafficLight
-from scipy.misc import imresize
-import tensorflow as tf
-import os
 import numpy as np
-
-# Get the model directory
-MODEL_DIR = os.getcwd()+ "/light_classification/model"
-
-WIDTH  = 227
-HEIGHT = 227
+import rospkg
+import cv2
+from keras.models import model_from_json
+from keras.models import Sequential
+from keras.layers import Input, Dense
+import tensorflow as tf
+import json
+import rospy
 
 
 class TLClassifier(object):
     def __init__(self):
-        print('--------------- Loading classifier --------------')
+        # Lower and Upper threshold for color extraction
+        self.model = None
+        self.create_model()
+        self.load_ssd_model()
+        if not self.model:
+            rospy.logerr("Failed to traffic light classifier model")
+
+        self.colors = [TrafficLight.RED,
+                       TrafficLight.YELLOW,
+                       TrafficLight.GREEN,
+                       TrafficLight.UNKNOWN]
+
+        self.num_pixels = 950
+
+        self.lower = np.array([150, 100, 150])
+        self.upper = np.array([180, 255, 255])
+
+        # Define red pixels in hsv color space
+        self.lower_red_1 = np.array([0, 70, 50], dtype="uint8")
+        self.upper_red_1 = np.array([10, 255, 255], dtype="uint8")
+
+        self.lower_red_2 = np.array([170, 70, 50], dtype="uint8")
+        self.upper_red_2 = np.array([180, 255, 255], dtype="uint8")
+
+    def create_model(self):
+        self.model =  Sequential()
+        self.model.add(Dense(200, activation='relu', input_shape=(30000,)))
+        self.model.add(Dense(3, activation='softmax'))
+
+        rospack = rospkg.RosPack()
+        path_v = rospack.get_path('styx')
+        model_file = path_v+ \
+               '/../tl_detector/light_classification/model/tl-model-sim.h5'
+        self.model.load_weights(model_file)
         self.graph = tf.get_default_graph()
 
-        self.sess = tf.Session()
-        #http://cv-tricks.com/tensorflow-tutorial/save-restore-tensorflow-models-quick-complete-tutorial/
-        # Load the meta graph and restore weights
-        self.saver = tf.train.import_meta_graph(MODEL_DIR + '/model.meta')
-        self.saver.restore(self.sess, tf.train.latest_checkpoint(MODEL_DIR))
+    def load_ssd_model(self):
+        rospack = rospkg.RosPack()
+        path_v = rospack.get_path('styx')
+        PATH_TO_CKPT = path_v + \
+                     '/../tl_detector/light_classification/model/ssd_sim.pb'
+        PATH_TO_LABELS = path_v + \
+                     '/../tl_detector/light_classification/model/label_map.pbtxt'
+        self.detection_graph = tf.Graph()
+        with self.detection_graph.as_default():
+            od_graph_def = tf.GraphDef()
+            with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
+                serialized_graph = fid.read()
+                od_graph_def.ParseFromString(serialized_graph)
+                tf.import_graph_def(od_graph_def, name='')
 
-        print('---------------- Loading complete ---------------')
+            self.sess = tf.Session(graph=self.detection_graph)
 
     def get_classification(self, image):
-        """Determines the color of the traffic light in the image
+        """
+        Determines the color of the traffic light in the image
 
         Args:
             image (cv::Mat): image containing the traffic light
@@ -34,57 +76,14 @@ class TLClassifier(object):
             int: ID of traffic light color (specified in styx_msgs/TrafficLight)
 
         """
-        def resize_image(image):
-            image = imresize(image, (WIDTH, HEIGHT))
-            return image
-
-        def calc_softmax(x):
-            """Compute softmax values for each sets of scores in x."""
-            return np.exp(x)/np.sum(np.exp(x), axis=0)
-
-        #def preprocess(image, mean_pixel):
-            #swap_img = np.array(image)
-            #img_out = np.array(swap_img)
-            #img_out[:, :, 0] = swap_img[:, :, 2]
-            #img_out[:, :, 2] = swap_img[:, :, 0]
-            #return img_out - mean_pixel
-
-        #TODO implement light color prediction
-        
-        #self.saver.restore(self.sess, tf.train.latest_checkpoint(MODEL_DIR))
-        #print("Image: ", image.shape)
-        resized_img = resize_image(image)
-        #print("resized shape: ", resized_img.shape)
-
-        expanded_img = np.expand_dims(resized_img, axis=0)
-
-        #mean_pixel = np.array([104.006, 116.669, 122.679], dtype=np.float32)
-        #preproc_img = preprocess(resized_img, mean_pixel)
-
-        # Placeholders
-        relu_op = self.graph.get_tensor_by_name('Classifier/Relu_2:0')
-
-        predictions = self.sess.run(relu_op, feed_dict=
-                                        {"input_images:0": expanded_img,
-                                         "keep_prob:0": 1.})
-
-        #print("Predictions: ", predictions)
-        predictions = np.squeeze(predictions)   #squeeze array to 1 dim array
-
-        #Check if all prediction the same or not activated
-        if all(val==predictions[0] for val in predictions):
-            return TrafficLight.UNKNOWN
-
-        softmax = calc_softmax(predictions)
-        max_index = np.argmax(softmax)
-        #print("Softmax: ", softmax)
-
-        #print('--------------- Classification {} -------------'.format(max_index))
-        if max_index == 0:
-            return TrafficLight.RED
-        elif max_index == 1:
-            return TrafficLight.YELLOW
-        elif max_index == 2:
-            return TrafficLight.GREEN
-        else:
-            return TrafficLight.UNKNOWN
+        image_new = image[100:700, 50:550]
+        #dim = (100, 26)
+        r = 100.0 / image_new.shape[1]
+        dim = (100, int(image_new.shape[0] * r))
+        resized = cv2.resize(image_new, dim)
+        image_data = np.array([resized.flatten().tolist()])
+        image_data /= 255
+        with self.graph.as_default():
+             classes = self.model.predict(image_data, batch_size=1)
+             return self.colors[np.argmax(classes[0])]
+        return TrafficLight.UNKNOWN

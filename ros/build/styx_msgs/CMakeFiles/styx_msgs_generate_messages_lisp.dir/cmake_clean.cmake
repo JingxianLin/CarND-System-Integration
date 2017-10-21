@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/styx_msgs_generate_messages_lisp"
-  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp"
-  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp"
-  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLight.lisp"
-  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp"
+  "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLight.lisp"
+  "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp"
+  "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp"
+  "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/styx_msgs_generate_messages_py"
-  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Waypoint.py"
-  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLightArray.py"
-  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLight.py"
-  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Lane.py"
-  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/__init__.py"
+  "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLight.py"
+  "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLightArray.py"
+  "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Waypoint.py"
+  "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Lane.py"
+  "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.
