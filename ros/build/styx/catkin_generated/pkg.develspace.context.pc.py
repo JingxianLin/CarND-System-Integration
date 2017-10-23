@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "styx"
-PROJECT_SPACE_DIR = "/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/devel"
+PROJECT_SPACE_DIR = "/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel"
 PROJECT_VERSION = "0.0.0"

@@ -1,8 +1,8 @@
-prefix=/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/install
+prefix=/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/install
 
 Name: waypoint_follower
 Description: Description of waypoint_follower
 Version: 0.0.0
-Cflags: -I/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/install/include
-Libs: -L/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/install/lib -llibwaypoint_follower
+Cflags: -I/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/install/include
+Libs: -L/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/install/lib -llibwaypoint_follower
 Requires: roscpp std_msgs tf geometry_msgs styx_msgs

@@ -1,8 +1,8 @@
-prefix=/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/install
+prefix=/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/install
 
 Name: waypoint_loader
 Description: Description of waypoint_loader
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/metal-box/Desktop/CarND-Capstone-release-1.0/ros/install/lib 
+Libs: -L/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/install/lib 
 Requires: 

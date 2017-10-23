@@ -4,13 +4,8 @@ import math
 from pid import PID
 from lowpass import LowPassFilter
 
-## 15 MPH
-GAS_DENSITY = 20.00
-ONE_MPH = 1.0
-
-## 10 MPH
-#GAS_DENSITY = 3.0
-#ONE_MPH = 0.45
+GAS_DENSITY = 2.858
+ONE_MPH = 0.44704
 
 
 class Controller(object):
@@ -63,3 +58,8 @@ class Controller(object):
 
         # Return throttle, brake, steer
         return throttle, brake, steer
+    def reset_pid(self):
+        self.pid_velocity.reset()
+        self.pid_steering.reset()
+        self.lowpass_velocity.reset()
+        self.lowpass_steering.reset()

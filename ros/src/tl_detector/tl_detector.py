@@ -13,9 +13,10 @@ import math
 import numpy as np
 import yaml
 
+LOGINFO = True
 STATE_COUNT_THRESHOLD = 6
-MAX_DIST              = 1000.0
-DEBUG                 = False
+MAX_DIST = 100.0
+
 
 class Point:
     def __init__(self, t):
@@ -40,8 +41,8 @@ class TLDetector(object):
         self.last_wp = -1
         self.state_count = 0
 
-        sub1 = rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb)
-        sub2 = rospy.Subscriber('/base_waypoints', Lane, self.waypoints_cb)
+        self.curr_pose = rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb)
+        self.base_wp = rospy.Subscriber('/base_waypoints', Lane, self.waypoints_cb)
 
         '''
         /vehicle/traffic_lights helps you acquire an accurate ground truth data source for the traffic light
@@ -67,6 +68,7 @@ class TLDetector(object):
 
     def waypoints_cb(self, waypoints):
         self.waypoints = waypoints.waypoints
+        self.base_wp.unregister()
 
     def traffic_cb(self, msg):
         self.lights = msg.lights
@@ -176,7 +178,7 @@ class TLDetector(object):
             y = -fy * point_veh[2]/point_veh[0] + 0.5*image_height
 
 
-            if DEBUG:
+            if LOGINFO:
               rospy.loginfo('trans: {}'.format(trans))
               rospy.loginfo('rot: {}'.format(rot))
               rospy.loginfo('point_x: {}, point_y: {} point_z: {}'.format(point_in_world.x, point_in_world.y, point_in_world.z))
@@ -208,10 +210,12 @@ class TLDetector(object):
 
         self.camera_image.encoding = "rgb8"
         cv_image = self.bridge.imgmsg_to_cv2(self.camera_image, "bgr8")
+        '''
 
         x, y = self.project_to_image_plane(light.pose.pose.position)
 
         #TODO use light location to zoom in on traffic light in image
+
         image_width  = self.config['camera_info']['image_width']
         image_height = self.config['camera_info']['image_height']
 
@@ -222,24 +226,26 @@ class TLDetector(object):
         bottom = int(y + h_img)
         left   = int(x - w_img)
         right  = int(x + w_img)
+        '''
 
-        tlState = TrafficLight.UNKNOWN
-        tlState = self.light_classifier.get_classification(cv_image)
+        tlDetect = TrafficLight.UNKNOWN
+        tlDetect = self.light_classifier.get_traffic_classification(cv_image)
 
-        if self.check_inside_image(left,top) and self.check_inside_image(bottom, right):
+        # if self.check_inside_image(left,top) and self.check_inside_image(bottom, right):
 
-            # Publish the cropped image on a ROS topic for debug purposes
-            if DEBUG:
-                self.publish_roi_image(roi)
+            # Publish the cropped image on a ROS topic for LOGINFO purposes
+            # if LOGINFO:
+            #    self.publish_roi_image(roi)
 
-            #tlState = self.light_classifier.get_classification(roi)
+            #tlDetect = self.light_classifier.get_classification(roi)
 
         #Get classification
-        if DEBUG:
-            rospy.loginfo('tlState: {}'.format(tlState))
-        #rospy.loginfo('tlState: {}'.format(light.state))
 
-        return light.state #tlState
+        rospy.loginfo('tlDetect: {}'.format(tlDetect))
+        #rospy.loginfo('tlDetect: {}'.format(light.state))
+
+        #return light.state #tlDetect
+        return tlDetect
 
     def publish_roi_image(self, img):
 
@@ -288,7 +294,7 @@ class TLDetector(object):
 
 
         if light:
-            if DEBUG:
+            if LOGINFO:
                 rospy.loginfo('light_wp: {}'.format(light_wp))
 
 
