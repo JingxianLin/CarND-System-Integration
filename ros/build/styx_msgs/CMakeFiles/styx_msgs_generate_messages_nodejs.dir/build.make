@@ -35,78 +35,78 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src
+CMAKE_SOURCE_DIR = /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build
+CMAKE_BINARY_DIR = /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build
 
 # Utility rule file for styx_msgs_generate_messages_nodejs.
 
 # Include the progress variables for this target.
 include styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/progress.make
 
-styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js
-styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js
-styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js
-styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js
+styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js
+styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js
+styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js
+styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js
 
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg/TrafficLightArray.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg/TrafficLight.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Javascript code from styx_msgs/TrafficLightArray.msg"
-	cd /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg/TrafficLightArray.msg -Istyx_msgs:/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg
-
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg/Waypoint.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/Twist.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/TwistStamped.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Javascript code from styx_msgs/Waypoint.msg"
-	cd /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg/Waypoint.msg -Istyx_msgs:/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg
-
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg/TrafficLight.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Javascript code from styx_msgs/TrafficLight.msg"
-	cd /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg/TrafficLight.msg -Istyx_msgs:/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg
-
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg/Lane.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/Twist.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/TwistStamped.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg/Waypoint.msg
-/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/CMakeFiles $(CMAKE_PROGRESS_4)
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg/Lane.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/Twist.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/TwistStamped.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg/Waypoint.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Javascript code from styx_msgs/Lane.msg"
-	cd /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg/Lane.msg -Istyx_msgs:/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg
+	cd /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg/Lane.msg -Istyx_msgs:/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg
+
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg/TrafficLight.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Javascript code from styx_msgs/TrafficLight.msg"
+	cd /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg/TrafficLight.msg -Istyx_msgs:/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg
+
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg/Waypoint.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/Twist.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/TwistStamped.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Javascript code from styx_msgs/Waypoint.msg"
+	cd /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg/Waypoint.msg -Istyx_msgs:/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg
+
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg/TrafficLightArray.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg/TrafficLight.msg
+/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Javascript code from styx_msgs/TrafficLightArray.msg"
+	cd /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg/TrafficLightArray.msg -Istyx_msgs:/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg
 
 styx_msgs_generate_messages_nodejs: styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs
-styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js
-styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js
-styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js
-styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js
+styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js
+styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js
+styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/Waypoint.js
+styx_msgs_generate_messages_nodejs: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js
 styx_msgs_generate_messages_nodejs: styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/build.make
 .PHONY : styx_msgs_generate_messages_nodejs
 
@@ -115,10 +115,10 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/build: styx_msgs_gen
 .PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/build
 
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/styx_msgs && $(CMAKE_COMMAND) -P CMakeFiles/styx_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/styx_msgs && $(CMAKE_COMMAND) -P CMakeFiles/styx_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/clean
 
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/styx_msgs /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/styx_msgs /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/styx_msgs /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/styx_msgs /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/depend
 

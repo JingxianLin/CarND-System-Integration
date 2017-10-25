@@ -8,7 +8,7 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
-: ${_CATKIN_SETUP_DIR:=/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/install}
+: ${_CATKIN_SETUP_DIR:=/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/install}
 _SETUP_UTIL="$_CATKIN_SETUP_DIR/_setup_util.py"
 unset _CATKIN_SETUP_DIR
 

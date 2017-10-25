@@ -1,8 +1,8 @@
-# Install script for directory: /home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/waypoint_loader
+# Install script for directory: /home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/waypoint_loader
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/waypoint_loader/catkin_generated/installspace/waypoint_loader.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/waypoint_loader/catkin_generated/installspace/waypoint_loader.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/waypoint_loader/cmake" TYPE FILE FILES
-    "/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/waypoint_loader/catkin_generated/installspace/waypoint_loaderConfig.cmake"
-    "/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/build/waypoint_loader/catkin_generated/installspace/waypoint_loaderConfig-version.cmake"
+    "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/waypoint_loader/catkin_generated/installspace/waypoint_loaderConfig.cmake"
+    "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/waypoint_loader/catkin_generated/installspace/waypoint_loaderConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/waypoint_loader" TYPE FILE FILES "/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/src/waypoint_loader/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/waypoint_loader" TYPE FILE FILES "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/waypoint_loader/package.xml")
 endif()
 

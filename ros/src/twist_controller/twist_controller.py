@@ -1,145 +1,75 @@
-import pid
-import lowpass
-import rospy
-import tf
 from yaw_controller import YawController
+from pid import PID
+from lowpass import LowPassFilter
+import math
+import rospy
+from styx_msgs.msg import Lane, Waypoint
+from geometry_msgs.msg import PoseStamped, Pose
 
 GAS_DENSITY = 2.858
 ONE_MPH = 0.44704
 
 
-
 class Controller(object):
-    def __init__(self, decel_limit, accel_limit, max_steer_angle,
-          max_lat_accel, min_speed, wheel_base, steer_ratio, vehicle_mass, wheel_radius,
-          max_throttle, max_brake):
-        self.decel_limit = decel_limit
-        self.accel_limit = accel_limit
-        self.max_steer_angle = max_steer_angle
-        self.vehicle_mass = vehicle_mass
-        self.wheel_radius = wheel_radius
+    def __init__(self, *args, **kwargs):
+        vehicle_mass    = kwargs['vehicle_mass']
+        fuel_capacity   = kwargs['fuel_capacity']
+        self.brake_deadband  = kwargs['brake_deadband']
+        self.decel_limit 	= kwargs['decel_limit']
+        accel_limit 	= kwargs['accel_limit']
+        wheel_radius 	= kwargs['wheel_radius']
+        wheel_base 		= kwargs['wheel_base']
+        steer_ratio 	= kwargs['steer_ratio']
+        max_lat_accel 	= kwargs['max_lat_accel']
+        max_steer_angle = kwargs['max_steer_angle']
 
-        # self.throttle_pid = pid.PID(kp = 0.6, ki = 0.004, kd = 0.2, mn=decel_limit, mx=accel_limit)
+        self.brake_tourque_const = (vehicle_mass + fuel_capacity * GAS_DENSITY) * wheel_radius
+        self.current_dbw_enabled = False
+        yaw_params = [wheel_base, steer_ratio, max_lat_accel, max_steer_angle]
+        self.yaw_controller = YawController(*yaw_params)
+        self.linear_pid = PID(0.9, 0.0005, 0.07, self.decel_limit, accel_limit)
+        self.tau_correction = 0.2
+        self.ts_correction = 0.1
+        self.low_pass_filter_correction = LowPassFilter(self.tau_correction, self.ts_correction)
+        self.previous_time = None
+        pass
 
-        # self.throttle_pid = pid.PID(kp = 40.0, ki = 0.0, kd = 0.7, mn=max_brake, mx=max_throttle) # percents cte
+    def update_sample_step(self):
+        current_time = rospy.get_time() 
+        sample_step = current_time - self.previous_time if self.previous_time else 0.05
+        self.previous_time = current_time
+        return sample_step
 
-        self.throttle_pid = pid.PID(kp = 1.5, ki = 0.004, kd = 0.01, mn=max_brake, mx=max_throttle) # cte is m/s
-
-        self.throttle_filter = lowpass.LowPassFilter(tau = 0.0, ts = 1.0)
-
-        self.steer_pid = pid.PID(kp = 0.5, ki = 0.0, kd = 0.2, mn=-max_steer_angle, mx=max_steer_angle) # ki = 0.04
-        self.steer_filter = lowpass.LowPassFilter(tau = 0.0, ts = 1.0)
-
-        self.yaw_controller = YawController(wheel_base, steer_ratio, min_speed, max_lat_accel, max_steer_angle)
-
-        self.clk = rospy.get_time()
-
-    def control(self,
-        target_linear_velocity,
-        current_linear_velocity,
-        target_angular_velocity,
-        current_angular_velocity,
-        steer_cte,
-        dbw_enabled):
-        # TODO: Change the arg, kwarg list to suit your needs
-        # Return throttle, brake, steer
-
-        # Get sample time
-        t = rospy.get_time()
-        dt = t - self.clk
-        self.clk = t
-
-        if not dbw_enabled:
-            self.throttle_pid.reset()
-            self.throttle_filter.ready = False
-            self.steer_pid.reset()
-            self.steer_filter.ready = False
-            rospy.loginfo("RESET!!!!")
-            return 0.0, 0.0, 0.0
-
-        # rospy.loginfo("DBW_ENABLED!!!!")
-
-        velocity_cte = target_linear_velocity - current_linear_velocity
-        # steer_cte = target_angular_velocity - current_angular_velocity
-
-        # rospy.loginfo('ctrl: steer_cte = {}, dt = {}'.format(steer_cte, dt))
-        # rospy.loginfo('ctrl: velocity_cte = {}, dt = {}'.format(velocity_cte, dt))
-
-        # Throtle PID
-        # throttle = self.throttle_pid.step(velocity_cte, dt)
-        # rospy.loginfo('ctrl: throttle = {}'.format(throttle))
-        # throttle = self.throttle_filter.filt(throttle)
-        # rospy.loginfo('ctrl: throttle_filtered = {}'.format(throttle))
-
-        '''
-        # Based on Slack discussions and knowledge from first submissions
-        # we've switched to the percentage values for brake & throttle
-        if target_linear_velocity > current_linear_velocity:
-          base = target_linear_velocity
-          if current_linear_velocity > 0.1:
-            velocity_cte = velocity_cte + 0.1
+    def control(self, linear_velocity_setpoint, angular_velocity_setpoint, linear_current_velocity, angular_current, dbw_enabled, final_waypoint1, final_waypoint2, current_location):
+        if (not self.current_dbw_enabled) and dbw_enabled:
+            self.current_dbw_enabled = True
+            self.linear_pid.reset()
+            self.previous_time = None
         else:
-          base = current_linear_velocity
-          if current_linear_velocity > 0.1:
-            velocity_cte = velocity_cte - 0.1
-        velocity_cte = velocity_cte / base
-        '''
+            self.current_dbw_enabled = False
+        linear_velocity_error = linear_velocity_setpoint - linear_current_velocity
 
-        # throttle = max(min(velocity_cte/base, 0.9), -0.9)
+        sample_step = self.update_sample_step()
 
-        throttle = self.throttle_pid.step(velocity_cte, dt)
+        velocity_correction = self.linear_pid.step(linear_velocity_error, sample_step)
+        velocity_correction = self.low_pass_filter_correction.filt(velocity_correction)
+        if abs(linear_velocity_setpoint)<0.01 and abs(linear_current_velocity) < 0.1:
+            velocity_correction = self.decel_limit
+        throttle = velocity_correction
+        brake = 0.
+        if throttle < 0.:
+            decel = abs(throttle)
+            #[alexm]NOTE: let engine decelerate the car if required deceleration below brake_deadband
+            brake = self.brake_tourque_const * decel if decel > self.brake_deadband else 0.
+            throttle = 0.
+        
+        #::NOTE this lowpass leads to sending both throttle and brake nonzero. Maybe it is better to filter velocity_correction
+        #brake = self.low_pass_filter_brake.filt(brake)
+        #steering = self.yaw_controller.get_steering_pid(angular_velocity_setpoint, angular_current, dbw_enabled)
+        #steering = 0.
+        #if final_waypoint1 and final_waypoint2 and linear_current_velocity < 1.:
+        #    steering = self.yaw_controller.get_steering_pid_cte(final_waypoint1, final_waypoint2, current_location, dbw_enabled)
+        #else:
+        steering = self.yaw_controller.get_steering_calculated(linear_velocity_setpoint, angular_velocity_setpoint, linear_current_velocity)
 
-        rospy.loginfo('velocity_cte = {:.4f}, dt = {:.4f}'.format(velocity_cte, dt))
-        rospy.loginfo('Pc = {:.4f}, Pd = {:.4f}, Pi = {:.4f}'.format(self.throttle_pid.pc, self.throttle_pid.pd, self.throttle_pid.pi))
-
-
-        # if target_linear_velocity > current_linear_velocity:
-        #     throttle = max(min(20 * (target_linear_velocity - current_linear_velocity + 0.1) / target_linear_velocity, 0.9), -0.9)
-        # else:
-        #     throttle = max(min(20 * (target_linear_velocity - current_linear_velocity - 0.2) / current_linear_velocity, 0.9), -0.9)
-            # throttle = -0.01
-
-
-        # Steer PID
-        steer = self.steer_pid.step(steer_cte, dt)
-        # rospy.loginfo('ctrl: steer = {}'.format(steer))
-        # steer = self.steer_filter.filt(steer)
-        # rospy.loginfo('ctrl: steer_filtered = {}'.format(steer))
-
-        # Yaw Controller
-        steering = self.yaw_controller.get_steering(target_linear_velocity, target_angular_velocity, current_linear_velocity)
-        # rospy.loginfo('ctrl: steering = {}'.format(steering))
-        # steering = self.steer_filter.filt(steering)
-
-        steer = self.steer_filter.filt(steer + 0.1 * steering)
-
-        # steer = 0.0
-
-        if throttle >= 0:
-            brake = 0.0
-        else:
-            # Calc brake torque as torque = Vmass * dec * wheel_radius
-            # ref http://sciencing.com/calculate-brake-torque-6076252.html
-
-            if abs(throttle) < 0.2:
-                throttle *= 2
-
-            # Stop still on red light :) - prevents slow movement near zero speed
-            if target_linear_velocity < 0.2:
-                throttle = -1.0
-
-
-            brake = abs(self.vehicle_mass * self.wheel_radius * (-1.0 * throttle)) #  * self.decel_limit throttle
-            # brake = -throttle
-            throttle = 0.0
-
-
-        # Stop still on red light :) - prevents slow movement near zero speed
-        if target_linear_velocity < 0.2:
-            throttle = 0.0
-            brake = abs(self.vehicle_mass * self.wheel_radius * 1.0)
-            # brake = -0.01
-
-
-        # Return throttle, brake, steer
-        return throttle, brake, steer
+        return throttle, brake, steering
