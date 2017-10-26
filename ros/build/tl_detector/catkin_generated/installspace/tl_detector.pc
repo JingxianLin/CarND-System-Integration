@@ -1,8 +1,8 @@
-prefix=/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/install
+prefix=/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/install
 
 Name: tl_detector
 Description: Description of tl_detector
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/install/lib 
+Libs: -L/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/install/lib 
 Requires: 

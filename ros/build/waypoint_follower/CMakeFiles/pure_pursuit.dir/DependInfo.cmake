@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/waypoint_follower/src/pure_pursuit.cpp" "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/waypoint_follower/CMakeFiles/pure_pursuit.dir/src/pure_pursuit.cpp.o"
-  "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/waypoint_follower/src/pure_pursuit_core.cpp" "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/waypoint_follower/CMakeFiles/pure_pursuit.dir/src/pure_pursuit_core.cpp.o"
+  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/src/waypoint_follower/src/pure_pursuit.cpp" "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/waypoint_follower/CMakeFiles/pure_pursuit.dir/src/pure_pursuit.cpp.o"
+  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/src/waypoint_follower/src/pure_pursuit_core.cpp" "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/waypoint_follower/CMakeFiles/pure_pursuit.dir/src/pure_pursuit_core.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -18,13 +18,13 @@ set(CMAKE_TARGET_DEFINITIONS
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/waypoint_follower/CMakeFiles/libwaypoint_follower.dir/DependInfo.cmake"
+  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/waypoint_follower/CMakeFiles/libwaypoint_follower.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/waypoint_follower/include"
-  "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/include"
+  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/src/waypoint_follower/include"
+  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/pcl-1.7"

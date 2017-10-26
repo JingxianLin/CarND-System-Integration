@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/waypoint_follower/lib/libwaypoint_follower.cpp" "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/build/waypoint_follower/CMakeFiles/libwaypoint_follower.dir/lib/libwaypoint_follower.cpp.o"
+  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/src/waypoint_follower/lib/libwaypoint_follower.cpp" "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/build/waypoint_follower/CMakeFiles/libwaypoint_follower.dir/lib/libwaypoint_follower.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,8 +21,8 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/src/waypoint_follower/include"
-  "/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/include"
+  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/src/waypoint_follower/include"
+  "/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/pcl-1.7"

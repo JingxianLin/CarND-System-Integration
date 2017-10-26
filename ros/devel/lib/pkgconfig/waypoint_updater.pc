@@ -1,8 +1,8 @@
-prefix=/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel
+prefix=/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel
 
 Name: waypoint_updater
 Description: Description of waypoint_updater
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/lib 
+Libs: -L/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/lib 
 Requires: 

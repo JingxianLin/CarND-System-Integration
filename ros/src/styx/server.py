@@ -11,7 +11,7 @@ from conf import conf
 
 sio = socketio.Server()
 app = Flask(__name__)
-msgs = {}
+msgs = []
 
 dbw_enable = False
 
@@ -20,21 +20,21 @@ def connect(sid, environ):
     print("connect ", sid)
 
 def send(topic, data):
-    msgs[topic] = data
+    s = 1
+    msgs.append((topic, data))
+    #sio.emit(topic, data=json.dumps(data), skip_sid=True)
 
 bridge = Bridge(conf, send)
 
 @sio.on('telemetry')
 def telemetry(sid, data):
     global dbw_enable
-    dbw_mode_upd = data.get("dbw_enable", dbw_enable)
-    if dbw_mode_upd != dbw_enable:
-        dbw_enable = dbw_mode_upd
+    if data["dbw_enable"] != dbw_enable:
+        dbw_enable = data["dbw_enable"]
         bridge.publish_dbw_status(dbw_enable)
-        
     bridge.publish_odometry(data)
     for i in range(len(msgs)):
-        topic, data = msgs.popitem()
+        topic, data = msgs.pop(0)
         sio.emit(topic, data=data, skip_sid=True)
 
 @sio.on('control')

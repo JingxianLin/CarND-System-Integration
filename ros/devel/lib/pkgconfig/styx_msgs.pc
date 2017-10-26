@@ -1,8 +1,8 @@
-prefix=/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel
+prefix=/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel
 
 Name: styx_msgs
 Description: Description of styx_msgs
 Version: 0.0.0
-Cflags: -I/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/include
-Libs: -L/home/metal-box/Desktop/CarND-Master/amakurin-CarND-Capstone-7f95aa2/ros/devel/lib 
+Cflags: -I/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/include
+Libs: -L/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/devel/lib 
 Requires: 
