@@ -10,13 +10,6 @@ This repository is maintained by the following:
 - [Jun Zhu](https://github.com/zhujun98)
 - [Mahmood Salah](https://github.com/Mahmoodsalah)
 
-### Team Members Email
-- [Andrew Raharjo](andrewraharjo@gmail.com)
-- [Jingxian Lin](star0.lin@gmail.com)
-- [Raymond Linn](raymondlinn@gmail.com)
-- [Jun Zhu](zhujun981661@gmail.com)
-- [Mahmood Salah](mahmoodsalah89@gmail.com)
-
 ### Installation 
 
 * Be sure that your workstation is running Ubuntu 16.04 Xenial Xerus or Ubuntu 14.04 Trusty Tahir. [Ubuntu downloads can be found here](https://www.ubuntu.com/download/desktop). 
@@ -43,7 +36,7 @@ git clone https://github.com/udacity/carnd_capstone.git
 
 2. Install python dependencies
 ```bash
-cd CarNd-Capstone
+cd carnd_capstone
 pip install -r requirements.txt
 ```
 3. Make and run styx
@@ -55,11 +48,10 @@ roslaunch launch/styx.launch
 ```
 4. Run the simulator
 ```bash
-unzip linux_system_int
-cd linux_system_int
-chmod +x system_integration.x86_64
-./system_integration.x86_64
+unzip lights_no_cars.zip
+cd lights_no_cars
+chmod +x ros_test.x86_64
+./ros_test.x86_64
 ```
-
 
 

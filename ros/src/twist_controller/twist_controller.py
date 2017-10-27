@@ -6,53 +6,55 @@ GAS_DENSITY = 2.858
 ONE_MPH = 0.44704
 
 
-class TwistController(object):
-    def __init__(self, controller_rate, max_steer_angle):
+class Controller(object):
+    def __init__(self, *args, **kwargs):
+        # TODO: Verify this commands
+        min = kwargs.get('min_acc', 0.0)
+        max = kwargs.get('max_acc', 0.0)
+        max_steer = kwargs.get('max_steer_angle', 0.0)
 
-        self.controller_rate = controller_rate
+        # create controllers
+        self.throttle_pid = pid.PID(kp=1.0, ki=0.02, kd=0.0, mn=min, mx=max)
+        self.steer_pid = pid.PID(kp=0.088, ki=0.003, kd=0.15, mn=-max_steer, mx=max_steer)
 
-        # TODO: find good parameters for PID controllers
-        self.pid_steer = pid.PID(kp=0.1, ki=0.00, kd=0.25,
-                                 mn=-max_steer_angle, mx=max_steer_angle)
+        # create lowpass filters
+        self.throttle_filter = lowpass.LowPassFilter(tau=0.10, ts=0.90)
+        self.steer_filter = lowpass.LowPassFilter(tau=0.00, ts=1.00)
 
-        self.last_timestamp = rospy.get_time()
+        # init timestamp
+        self.timestamp = rospy.get_time()
+        pass
 
-    def control(self, cross_track_error):
-        """
-        calculates control signal
-        :param speed_error:
-        :param cross_track_error: The cross track error (cte) is the current y
-                position of the vehicle
-        :return: throttle [1], brake [Nm], steer [rad]
-        """
-        current_timestamp = rospy.get_time()
-        duration = current_timestamp - self.last_timestamp
-        self.last_timestamp = current_timestamp
+    def control(self, *args, **kwargs):
+        # TODO: Change the arg, kwarg list to suit your needs
+        # Return throttle, brake, steer
+        latest_timestamp = rospy.get_time()
+        duration = latest_timestamp - self.timestamp
+        sample_time = duration + 1e-6  # to avoid division by zero
+        self.timestamp = latest_timestamp
+        
+        vel_error = args[0]
+        cte = args[1]
+        dbw_enabled = args[2]
 
-        #rospy.loginfo('Error cte: %s', cross_track_error)
-        steering_angle = self.pid_steer.step(error=cross_track_error,
-                                             sample_time=duration)
-
-        steering_out = steering_angle
-
-        return steering_out
-
-    def reset(self):
-        """
-        resets pid controllers
-        """
-
-        self.pid_steer.reset()
-
-def test_controller():
-    """
-    simple test of functionality by creating Controller object and performing
-    one control step
-    """
-    controller = TwistController(controller_rate=30,
-                                 max_steer_angle=0.25)
-
-    controller.control(0.1)
-
-if __name__ == "__main__":
-    test_controller()
+        if dbw_enabled:
+            # initialize values
+            brake = 0.
+            throttle = 0.
+            # calculate new steering angle
+            steering_angle = self.steer_pid.step(cte, sample_time)
+            steering_angle = self.steer_filter.filt(steering_angle)
+            # calculate throttle and brake
+            throttle = self.throttle_pid.step(vel_error, sample_time)
+            throttle = self.throttle_filter.filt(throttle)
+            # convert to the expected format
+            if throttle < 0.:
+                brake = throttle
+                throttle = 0.
+            return throttle, brake, steering_angle
+        # dbw is not enabled (manual override) so resetting pid's and filters
+        self.throttle_pid.reset()
+        self.steer_pid.reset()
+        self.throttle_filter.last_val = 0.0
+        self.steer_filter.last_val = 0.0
+        return 0., 0., 0.

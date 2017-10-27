@@ -1,295 +1,149 @@
 #!/usr/bin/env python
-
-import scipy.spatial
-import numpy as np
+import sys
 
 import rospy
 from geometry_msgs.msg import PoseStamped
-from styx_msgs.msg import Lane, TrafficLightArray
-from std_msgs.msg import Int32
+from styx_msgs.msg import Lane, Waypoint
+
+from helper_function import dist_two_points, closest_waypoint
+
+import math
+import copy
 
 
-LOOKAHEAD_WPS = 30
+'''
+This node will publish waypoints from the car's current position to some `x` distance ahead.
 
+As mentioned in the doc, you should ideally first implement a version which does not care
+about traffic lights or obstacles.
 
-def constant_v_waypoints(waypoints, velocity, incremental=True):
-    final_waypoints = []
+Once you have created dbw_node, you will update this node to use the status of traffic lights too.
 
-    if incremental:
-        forward_velocity = velocity
-    else:
-        forward_velocity = - velocity
+Please note that our simulator also provides the exact location of traffic lights and their
+current status in `/vehicle/traffic_lights` message. You can use this message to build this node
+as well as to verify your TL classifier.
 
+TODO (for Yousuf and Aaron): Stopline location for each traffic light.
+'''
 
-    x_vector = [waypoint.pose.pose.position.x for waypoint in waypoints]
-    y_vector = [waypoint.pose.pose.position.y for waypoint in waypoints]
-
-    delta_x = np.diff(x_vector)
-    delta_y = np.diff(y_vector)
-    delta_s = np.sqrt(np.square(delta_x) + np.square(delta_y))
-
-    last_waypoint = waypoints[0]
-    for index, waypoint in enumerate(waypoints[1:]):
-        velocity_x = forward_velocity * delta_x[index] / delta_s[index]
-        velocity_y = forward_velocity * delta_y[index] / delta_s[index]
-        last_waypoint.twist.twist.linear.x = velocity_x
-        last_waypoint.twist.twist.linear.y = velocity_y
-        final_waypoints.append(last_waypoint)
-
-        last_waypoint = waypoint
-
-    return final_waypoints
-
-
-def waypoints_under_stoppage_point(waypoints, stoppage_point,
-                                   incremental=True):
-    if stoppage_point is None:
-        return waypoints
-
-    look_ahead = 50
-    road_width = 30
-    start_zero_velocity = 25
-    end_zero_velocity = 28
-
-    final_waypoints = []
-
-    if incremental:
-        forward_direction = 1
-    else:
-        forward_direction = - 1
-
-    x_vector = [waypoint.pose.pose.position.x for waypoint in waypoints]
-    y_vector = [waypoint.pose.pose.position.y for waypoint in waypoints]
-    delta_x = np.diff(x_vector)
-    delta_y = np.diff(y_vector)
-    delta_s = np.sqrt(np.square(delta_x) + np.square(delta_y))
-
-    last_waypoint = waypoints[0]
-
-    for index, waypoint in enumerate(waypoints[1:]):
-        direction_x = forward_direction * delta_x[index] / delta_s[index]
-        direction_y = forward_direction * delta_y[index] / delta_s[index]
-
-        longitudinal_road_vector = np.array([direction_x, direction_y])
-        lateral_road_vector = np.array([-direction_y, direction_x])
-
-        x_waypoint = last_waypoint.pose.pose.position.x
-        y_waypoint = last_waypoint.pose.pose.position.y
-
-        relative_position = np.array([stoppage_point.pose.pose.position.x - x_waypoint,
-                                      stoppage_point.pose.pose.position.y - y_waypoint])
-
-        longitudinal_position = relative_position.dot(longitudinal_road_vector)
-        lateral_position = relative_position.dot(lateral_road_vector)
-
-        if (longitudinal_position >= start_zero_velocity
-                and longitudinal_position <= end_zero_velocity
-                and abs(lateral_position) <= road_width):
-            ratio = 0
-        elif (longitudinal_position >= end_zero_velocity
-              and longitudinal_position <= look_ahead
-              and abs(lateral_position) <= road_width):
-            ratio = ((longitudinal_position - end_zero_velocity)
-                     / (look_ahead - end_zero_velocity))
-        else:
-            ratio = 1
-
-
-        last_waypoint.twist.twist.linear.x *= ratio
-        last_waypoint.twist.twist.linear.y *= ratio
-        final_waypoints.append(last_waypoint)
-        last_waypoint = waypoint
-
-    final_waypoints.append(last_waypoint)
-
-    return final_waypoints
-
-
-def waypoints_under_lights(waypoints, lights, incremental=True):
-    red = 0
-
-    look_ahead = 50
-    road_width = 30
-    length_zero_velocity = 15
-
-    final_waypoints = []
-
-    if incremental:
-        forward_direction = 1
-    else:
-        forward_direction = - 1
-
-    x_vector = [waypoint.pose.pose.position.x for waypoint in waypoints]
-    y_vector = [waypoint.pose.pose.position.y for waypoint in waypoints]
-    delta_x = np.diff(x_vector)
-    delta_y = np.diff(y_vector)
-    delta_s = np.sqrt(np.square(delta_x) + np.square(delta_y))
-
-    last_waypoint = waypoints[0]
-    for index, waypoint in enumerate(waypoints[1:]):
-        direction_x = forward_direction * delta_x[index] / delta_s[index]
-        direction_y = forward_direction * delta_y[index] / delta_s[index]
-
-        longitudinal_road_vector = np.array([direction_x, direction_y])
-        lateral_road_vector = np.array([-direction_y, direction_y])
-
-        ratio = 1
-        x_waypoint = last_waypoint.pose.pose.position.x
-        y_waypoint = last_waypoint.pose.pose.position.y
-
-        for light in lights:
-            relative_position = np.array([light.pose.pose.position.x - x_waypoint,
-                                          light.pose.pose.position.y - y_waypoint])
-
-            longitudinal_position = relative_position.dot(longitudinal_road_vector)
-            lateral_position = relative_position.dot(lateral_road_vector)
-
-            if (longitudinal_position >= 0 and light.state == red
-                    and longitudinal_position <= length_zero_velocity
-                    and abs(lateral_position) <= road_width):
-                ratio = 0
-            elif (longitudinal_position >= 0 and light.state == red
-                  and longitudinal_position <= look_ahead
-                  and abs(lateral_position) <= road_width):
-                ratio = ((longitudinal_position - length_zero_velocity)
-                         / (look_ahead - length_zero_velocity))
-            else:
-                ratio = 1
-
-        last_waypoint.twist.twist.linear.x *= ratio
-        last_waypoint.twist.twist.linear.y *= ratio
-        final_waypoints.append(last_waypoint)
-        last_waypoint = waypoint
-
-    final_waypoints.append(last_waypoint)
-
-    return final_waypoints
-
-
-def get_kd_tree(waypoints):
-    if get_kd_tree.kd_tree is None:
-        waypoint_coordinates = [[waypoint.pose.pose.position.x,
-                                 waypoint.pose.pose.position.y] for waypoint in waypoints]
-        get_kd_tree.kd_tree = scipy.spatial.KDTree(waypoint_coordinates)
-        get_kd_tree.waypoint_coordinates = waypoint_coordinates
-        return get_kd_tree.kd_tree, get_kd_tree.waypoint_coordinates
-    else:
-        return get_kd_tree.kd_tree, get_kd_tree.waypoint_coordinates
-
-get_kd_tree.kd_tree = None
-get_kd_tree.waypoint_coordinates = None
-
-
-def get_closest_index_behind(waypoints, pose, incremental=True):
-
-    waypoints_kd_tree, waypoint_coordinates = get_kd_tree(waypoints)
-
-    pose_coordinates = [pose.pose.position.x, pose.pose.position.y]
-    _, index = waypoints_kd_tree.query(pose_coordinates)
-
-    next_index = (index + 1) % len(waypoints)
-    this_position = np.array(waypoint_coordinates[index])
-    next_position = np.array(waypoint_coordinates[next_index])
-    positive_vector = (this_position - next_position if incremental
-                       else this_position - next_position)
-    relative_position = np.array(pose_coordinates) - this_position
-    if (positive_vector.dot(relative_position) >= 0):
-        return index
-    else:
-        adjusted_index = index - 1 if incremental else index + 1
-        return adjusted_index % len(waypoints)
+LOOKAHEAD_WPS = 200  # Number of waypoints we will publish. You can change this number
+SUB_QUEUE_SIZE = 100
+PUB_QUEUE_SIZE = 100
 
 
 class WaypointUpdater(object):
-
     def __init__(self):
         rospy.init_node('waypoint_updater')
 
-        self.waypoints = None
-        self.waypoints_2laps = None
-        self.lights = []
-        self.stoppage_point = None
+        # Estimated buff_size = 10902*22*24 = 5,756,256 bytes!
+        rospy.Subscriber('/base_waypoints', Lane, self.waypoints_cb,
+                         queue_size=1, buff_size=6000000)
+        rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb,
+                         queue_size=SUB_QUEUE_SIZE)
+        rospy.Subscriber('/traffic_waypoint', Lane, self.traffic_cb,
+                         queue_size=SUB_QUEUE_SIZE)
 
-        self.waypoints_subscriber = rospy.Subscriber('/base_waypoints', Lane,
-                                                     self.waypoints_cb, queue_size=1)
-        rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb, queue_size=1)
-        rospy.Subscriber('/traffic_waypoint', Int32, self.next_light_cb, queue_size=1)
-        self.velocity = rospy.get_param('/waypoint_loader/velocity', 20) / 3.6
+        # Only waypoint_follower subscribes this msg.
+        # Estimated buff_size 200*22*24 = 105,600 bytes, a queue size of 100
+        # means 10,560,000 bytes
+        self.final_waypoints_pub = rospy.Publisher(
+            '/final_waypoints', Lane, queue_size=PUB_QUEUE_SIZE)
 
-        self.final_waypoints_pub = rospy.Publisher('/final_waypoints', Lane, queue_size=1)
+        self.prev_nearest_waypoint = [None, None]
+        self.map_x = []
+        self.map_y = []
+        self.map_velocity = []
+        self._is_initialized = False
+
         rospy.spin()
 
+    def pose_cb(self, msg):
+        """Publish waypoints"""
+        # rospy.loginfo('WaypointUpdater: Current Pose returned.')
 
-    def waypoints_cb(self, lane):
-        self.waypoints = lane.waypoints
-        self.waypoints_2laps = self.waypoints + self.waypoints
-        self.waypoints_subscriber.unregister()
+        pose_x = msg.pose.position.x
+        pose_y = msg.pose.position.y
 
+        # self.map_x and self.map_y could be updated during the execution
+        # of the method
+        map_x = copy.copy(self.map_x)
+        map_y = copy.copy(self.map_y)
+        map_velocity = copy.copy(self.map_velocity)
 
-    def next_light_cb(self, next_light_index_message):
-        next_light_index = next_light_index_message.data
-        if next_light_index == -1:
-            self.stoppage_point = None
-        else:
-            next_light = self.waypoints[next_light_index]
-            self.stoppage_point = next_light
+        if len(map_x) < LOOKAHEAD_WPS or len(map_y) < LOOKAHEAD_WPS:
+            return
 
+        nearest_waypoint = closest_waypoint(pose_x, pose_y, map_x, map_y)
+        if not nearest_waypoint:
+            return
 
-    def pose_cb(self, pose):
-        velocity = 10
-        if self.waypoints is not None:
-            closest_wp_index = get_closest_index_behind(self.waypoints, pose)
-            lane = Lane()
-            next_points = self.waypoints_2laps[closest_wp_index:
-                                               closest_wp_index+LOOKAHEAD_WPS]
-            velocity_waypoints = constant_v_waypoints(next_points, self.velocity)
-            lane.waypoints = waypoints_under_stoppage_point(velocity_waypoints,
-                                                            self.stoppage_point)
+        # Reduce the frequency of publication
+        if self.prev_nearest_waypoint and \
+                map_x[nearest_waypoint] == self.prev_nearest_waypoint[0] and \
+                map_y[nearest_waypoint] == self.prev_nearest_waypoint[1]:
+            return
 
-            self.final_waypoints_pub.publish(lane)
+        # Look for next waypoint - LOOKAHEAD_WPS
+        publish_list = []
+        for i in range(LOOKAHEAD_WPS):
+            try:
+                wp = Waypoint()
+                wp.pose.pose.position.x = float(map_x[nearest_waypoint+i])
+                wp.pose.pose.position.y = float(map_y[nearest_waypoint+i])
+                wp.pose.pose.position.z = float(0.0)
+                wp.twist.twist.linear.x = float(map_velocity[nearest_waypoint+i])
+                publish_list.append(wp)
+            except IndexError:
+                return
 
+        # If enough waypoints are received, update previous nearest waypoint
+        self.prev_nearest_waypoint[0] = map_x[nearest_waypoint]
+        self.prev_nearest_waypoint[1] = map_y[nearest_waypoint]
+        rospy.loginfo('WaypointUpdater: at waypoint {:.2f}, {:.2f}'.
+                      format(self.prev_nearest_waypoint[0],
+                             self.prev_nearest_waypoint[1]))
 
-class WaypointUpdaterGroundTruth(object):
+        lane = Lane()
+        lane.header.frame_id = msg.header.frame_id
+        lane.header.stamp = rospy.Time(0)
+        lane.waypoints = publish_list
 
-    def __init__(self):
-        rospy.init_node('waypoint_updater')
+        self.final_waypoints_pub.publish(lane)
+        rospy.loginfo("WaypointUpdater: {} waypoints published!"
+                      .format(len(publish_list)))
 
-        self.waypoints = None
-        self.waypoints_2laps = None
-        self.lights = []
+    def waypoints_cb(self, msg):
+        """Create two lists one with X and other with Y waypoints
 
-        self.waypoints_subscriber = rospy.Subscriber('/base_waypoints', Lane,
-                                                     self.waypoints_cb, queue_size=1)
-        rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb, queue_size=1)
-        rospy.Subscriber('/vehicle/traffic_lights', TrafficLightArray,
-                         self.traffic_cb, queue_size=1)
-        self.velocity = rospy.get_param('/waypoint_loader/velocity', 20) / 3.6
+            Only read the '/base_waypoints' once!
+        """
+        if self._is_initialized is False:
+            # TODO: Is it necessary to add a sanity check here?
+            self.map_x = []
+            self.map_y = []
+            self.map_velocity = []
+            for waypoint in msg.waypoints:
+                self.map_x.append(waypoint.pose.pose.position.x)
+                self.map_y.append(waypoint.pose.pose.position.y)
+                self.map_velocity.append(waypoint.twist.twist.linear.x)
 
-        self.final_waypoints_pub = rospy.Publisher('/final_waypoints', Lane, queue_size=1)
-        rospy.spin()
+            self._is_initialized = True
 
+    def traffic_cb(self, msg):
+        # TODO: Callback for /traffic_waypoint message. Implement
+        rospy.loginfo('WaypointUpdater: traffic waypoint returned')
 
-    def waypoints_cb(self, lane):
-        self.waypoints = lane.waypoints
-        self.waypoints_2laps = self.waypoints + self.waypoints
-        self.waypoints_subscriber.unregister()
+    def obstacle_cb(self, msg):
+        # TODO: Callback for /obstacle_waypoint message. We will implement it later
+        rospy.loginfo('WaypointUpdater: obstacle waypoints returned')
 
-
-    def pose_cb(self, pose):
-
-        if self.waypoints is not None:
-            closest_wp_index = get_closest_index_behind(self.waypoints, pose)
-            lane = Lane()
-            next_points = self.waypoints_2laps[closest_wp_index:
-                                               closest_wp_index+LOOKAHEAD_WPS]
-            velocity_waypoints = constant_v_waypoints(next_points, self.velocity)
-            lane.waypoints = waypoints_under_lights(velocity_waypoints, self.lights)
-
-            self.final_waypoints_pub.publish(lane)
-
-
-    def traffic_cb(self, traffic_lights):
-        self.lights = traffic_lights.lights
+    def distance(self, waypoints, wp1, wp2):
+        dist = 0
+        dl = lambda a, b: math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2  + (a.z-b.z)**2)
+        for i in range(wp1, wp2+1):
+            dist += dl(waypoints[wp1].pose.pose.position, waypoints[i].pose.pose.position)
+            wp1 = i
+        return dist
 
 
 if __name__ == '__main__':
