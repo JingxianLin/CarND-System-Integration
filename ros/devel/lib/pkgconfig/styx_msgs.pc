@@ -1,0 +1,8 @@
+prefix=/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel
+
+Name: styx_msgs
+Description: Description of styx_msgs
+Version: 0.0.0
+Cflags: -I/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/include
+Libs: -L/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/lib 
+Requires: 
