@@ -6,7 +6,9 @@ from dbw_mkz_msgs.msg import ThrottleCmd, SteeringCmd, BrakeCmd, SteeringReport
 from geometry_msgs.msg import TwistStamped
 import math
 
-from twist_controller import Controller
+from yaw_controller import YawController
+from pid import PID
+from lowpass import LowPassFilter
 
 '''
 You can build this node only after you have built (or partially built) the `waypoint_updater` node.
@@ -30,9 +32,14 @@ Once you have the proposed throttle, brake, and steer values, publish it on the 
 that we have created in the `__init__` function.
 
 '''
+LOOP_RATE = 10
+PUB_QUEUE_SIZE = 100
+SUB_QUEUE_SIZE = 100
+
 
 class DBWNode(object):
     def __init__(self):
+        """Initialization"""
         rospy.init_node('dbw_node')
 
         vehicle_mass = rospy.get_param('~vehicle_mass', 1736.35)
@@ -46,35 +53,96 @@ class DBWNode(object):
         max_lat_accel = rospy.get_param('~max_lat_accel', 3.)
         max_steer_angle = rospy.get_param('~max_steer_angle', 8.)
 
-        self.steer_pub = rospy.Publisher('/vehicle/steering_cmd',
-                                         SteeringCmd, queue_size=1)
-        self.throttle_pub = rospy.Publisher('/vehicle/throttle_cmd',
-                                            ThrottleCmd, queue_size=1)
-        self.brake_pub = rospy.Publisher('/vehicle/brake_cmd',
-                                         BrakeCmd, queue_size=1)
+        self.steer_pub = rospy.Publisher(
+            '/vehicle/steering_cmd', SteeringCmd, queue_size=PUB_QUEUE_SIZE)
+        self.throttle_pub = rospy.Publisher(
+            '/vehicle/throttle_cmd', ThrottleCmd, queue_size=PUB_QUEUE_SIZE)
+        self.brake_pub = rospy.Publisher(
+            '/vehicle/brake_cmd', BrakeCmd, queue_size=PUB_QUEUE_SIZE)
 
-        # TODO: Create `TwistController` object
-        # self.controller = TwistController(<Arguments you wish to provide>)
+        self.yaw_controller = YawController(
+            wheel_base, steer_ratio, max_lat_accel, max_steer_angle)
 
-        # TODO: Subscribe to all the topics you need to
+        self.throttle_filter = LowPassFilter(0.1, 0.9)
+        self.throttle_controller = PID(1., 0., 0., 0, accel_limit)
+
+        self._dbw_enabled = True
+        self.dbw_enabled = True
+        self.current_speed = 0.0  # current speed
+        self.cmd_speed = 0.0  # target speed
+        self.cmd_yaw_rate = 0.0  # target yaw rate at the target speed
+
+        rospy.Subscriber('/vehicle/dbw_enabled', Bool, self.dbw_enabled_cb,
+                         queue_size=SUB_QUEUE_SIZE)
+        rospy.Subscriber('/twist_cmd', TwistStamped, self.twist_cmd_cb,
+                         queue_size=SUB_QUEUE_SIZE)
+        rospy.Subscriber('/current_velocity', TwistStamped, self.velocity_cb,
+                         queue_size=SUB_QUEUE_SIZE)
 
         self.loop()
 
+    @property
+    def dbw_enable(self):
+        """getter"""
+        return self._dbw_enabled
+
+    @dbw_enable.setter
+    def dbw_enable(self, value):
+        """setter"""
+        if self._dbw_enabled is True and value is False:
+            print("Self-driving mode off")
+        elif self._dbw_enabled is False and value is True:
+            print("Self-driving mode on")
+        else:
+            pass
+
+        self._dbw_enabled = value
+
+    def twist_cmd_cb(self, msg):
+        """Get target speed and yaw rate"""
+        self.cmd_speed = msg.twist.linear.x
+        self.cmd_yaw_rate = msg.twist.angular.z
+        rospy.loginfo("dbw_node: cmd_speed: {}, cmd_yaw_rate: {}".
+                      format(self.cmd_speed, self.cmd_yaw_rate))
+
+    def velocity_cb(self, msg):
+        """Get current speed"""
+        self.current_speed = msg.twist.linear.x
+        # rospy.loginfo("dbw_node: current_speed: {}".format(self.current_speed))
+
+    def dbw_enabled_cb(self, msg):
+        """
+        :param msg:
+        :return:
+        """
+        # TODO: we do not have this msg!
+        self.dbw_enabled = msg.data
+
     def loop(self):
-        rate = rospy.Rate(50) # 50Hz
+        """"""
+        rate = rospy.Rate(LOOP_RATE)
         while not rospy.is_shutdown():
-            # TODO: Get predicted throttle, brake, and steering using `twist_controller`
-            # You should only publish the control commands if dbw is enabled
-            # throttle, brake, steering = self.controller.control(<proposed linear velocity>,
-            #                                                     <proposed angular velocity>,
-            #                                                     <current linear velocity>,
-            #                                                     <dbw status>,
-            #                                                     <any other argument you need>)
-            # if <dbw is enabled>:
-            #   self.publish(throttle, brake, steer)
+            if self.dbw_enabled is True:
+                # Lock the values in a loop
+                current_speed = self.current_speed
+                cmd_yaw_rate = self.cmd_yaw_rate
+                cmd_speed = self.cmd_speed
+
+                brake = 0
+                throttle = self.throttle_controller.step(
+                    self.throttle_filter.filt(cmd_speed - current_speed), 1.)
+
+                steering = self.yaw_controller.get_steering(cmd_speed, cmd_yaw_rate, current_speed)
+
+                self.publish(throttle, brake, steering)
+
             rate.sleep()
 
     def publish(self, throttle, brake, steer):
+        """Publish throttle, brake and steer"""
+        rospy.loginfo("dbw_node: Throttle: {}, brake: {}, steering {}"
+                      .format(throttle, brake, steer))
+
         tcmd = ThrottleCmd()
         tcmd.enable = True
         tcmd.pedal_cmd_type = ThrottleCmd.CMD_PERCENT
