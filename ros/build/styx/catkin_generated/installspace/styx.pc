@@ -1,8 +1,0 @@
-prefix=/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/install
-
-Name: styx
-Description: Description of styx
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/metal-box/Desktop/CarND-Master/CarND-Capstone-latest/ros/install/lib 
-Requires: 
