@@ -1,104 +1,115 @@
 from styx_msgs.msg import TrafficLight
-import numpy as np
-import rospkg
+import keras
+from keras.models import load_model, model_from_json
+from keras.preprocessing.image import img_to_array, load_img
+import tensorflow as tensorflow
 import cv2
-from keras.models import model_from_json
-from keras.models import Sequential
-from keras.layers import Input, Dense
-import tensorflow as tf
-import json
-import rospy
-
+import numpy as np
 
 class TLClassifier(object):
-    def __init__(self, experiment_environment):
-        
-        if experiment_environment == "simulator":
-            
-            model_path = 'light_classification/model/model_sim.json'
-            weights_path = 'light_classification/model/weights_sim.hdf5'
-        
-        elif experiment_environment == "site":
-            
-            model_path = 'light_classification/model/model_site.json'
-            weights_path = 'light_classification/model/weights_site.hdf5'
-        
-        # else:
-            
-        #     raise ValueError("Launch is neither styx.launch nor site.launch!!!")
-        
-        # Lower and Upper threshold for color extraction
-        self.model = None
-        self.create_model()
-        self.load_ssd_model()
-        if not self.model:
-            rospy.logerr("Failed to traffic light classifier model")
+    def __init__(self):
+        self.cascade = None # Haar cascade for TL detection
+        self.test_model = None
+        self.graph = None
+#        self.save_counter = 0
 
-        self.colors = [TrafficLight.RED,
-                       TrafficLight.YELLOW,
-                       TrafficLight.GREEN,
-                       TrafficLight.UNKNOWN]
+    def init(self):
+        self.cascade = cv2.CascadeClassifier('./cascade_gen.xml') # Haar cascade for TL detection
 
-        self.num_pixels = 950
+        if keras.__version__ < '2.0.0':
+            model_json = ''
+            with open('./models/m_structure.json', 'r') as file:
+                model_json = file.read();
+            self.test_model = model_from_json(model_json)
+            self.test_model.load_weights('./models/m_weights.h5')
+        else:
+            print 'WARN! Using Keras version {}'.format(keras.__version__)
+            self.test_model = load_model('./models/tl_state_aug_v3.h5')
+        self.graph = tensorflow.get_default_graph()
 
-        self.lower = np.array([150, 100, 150])
-        self.upper = np.array([180, 255, 255])
+    # Faster Non-Maximum Suppression
+    # From http://www.pyimagesearch.com/2015/02/16/faster-non-maximum-suppression-python/
+    # Malisiewicz et al.
+    def non_max_suppression_fast(self, boxes, overlapThresh):
+        if len(boxes) == 0:
+            return []
+            boxes = np.array(boxes)
+        if boxes.dtype.kind == "i":
+            boxes = boxes.astype("float")
+        pick = []
+        x1 = boxes[:,0]
+        y1 = boxes[:,1]
+        x2 = x1+boxes[:,2]
+        y2 = y1+boxes[:,3]
+        area = (x2 - x1 + 1) * (y2 - y1 + 1)
+        idxs = np.argsort(y1)
+        while len(idxs) > 0:
+            last = len(idxs) - 1
+            i = idxs[last]
+            pick.append(i)
+            xx1 = np.maximum(x1[i], x1[idxs[:last]])
+            yy1 = np.maximum(y1[i], y1[idxs[:last]])
+            xx2 = np.minimum(x2[i], x2[idxs[:last]])
+            yy2 = np.minimum(y2[i], y2[idxs[:last]])
+            w = np.maximum(0, xx2 - xx1 + 1)
+            h = np.maximum(0, yy2 - yy1 + 1)
+            overlap = (w * h) / area[idxs[:last]]
+            idxs = np.delete(idxs, np.concatenate(([last],
+                np.where(overlap > overlapThresh)[0])))
+        return boxes[pick].astype("int")
 
-        # Define red pixels in hsv color space
-        self.lower_red_1 = np.array([0, 70, 50], dtype="uint8")
-        self.upper_red_1 = np.array([10, 255, 255], dtype="uint8")
 
-        self.lower_red_2 = np.array([170, 70, 50], dtype="uint8")
-        self.upper_red_2 = np.array([180, 255, 255], dtype="uint8")
-
-    def create_model(self):
-        self.model =  Sequential()
-        self.model.add(Dense(200, activation='relu', input_shape=(30000,)))
-        self.model.add(Dense(3, activation='softmax'))
-
-        rospack = rospkg.RosPack()
-        path_v = rospack.get_path('styx')
-        model_file = path_v+ \
-               '/../tl_detector/light_classification/model/tl-model-sim.h5'
-        self.model.load_weights(model_file)
-        self.graph = tf.get_default_graph()
-
-    def load_ssd_model(self):
-        rospack = rospkg.RosPack()
-        path_v = rospack.get_path('styx')
-        PATH_TO_CKPT = path_v + \
-                     '/../tl_detector/light_classification/model/ssd_sim.pb'
-        PATH_TO_LABELS = path_v + \
-                     '/../tl_detector/light_classification/model/tl_label_map.pbtxt'
-        self.detection_graph = tf.Graph()
-        with self.detection_graph.as_default():
-            od_graph_def = tf.GraphDef()
-            with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
-                serialized_graph = fid.read()
-                od_graph_def.ParseFromString(serialized_graph)
-                tf.import_graph_def(od_graph_def, name='')
-
-            self.sess = tf.Session(graph=self.detection_graph)
-
-    def get_classification(self, image):
-        """
-        Determines the color of the traffic light in the image
+    def get_classification(self, cv_image):
+        """Determines the color of the traffic light in the image
 
         Args:
-            image (cv::Mat): image containing the traffic light
+            cv_image (cv::Mat): image containing the traffic light
 
         Returns:
             int: ID of traffic light color (specified in styx_msgs/TrafficLight)
 
         """
-        image_new = image[100:700, 50:550]
-        #dim = (100, 26)
-        r = 100.0 / image_new.shape[1]
-        dim = (100, int(image_new.shape[0] * r))
-        resized = cv2.resize(image_new, dim)
-        image_data = np.array([resized.flatten().tolist()])
-        image_data /= 255
-        with self.graph.as_default():
-             classes = self.model.predict(image_data, batch_size=1)
-             return self.colors[np.argmax(classes[0])]
-        return TrafficLight.UNKNOWN
+#        clonned = cv_image.copy()
+
+        box = self.cascade.detectMultiScale(cv_image, 1.3, 3)
+        box = self.non_max_suppression_fast(box, 0.2)
+        state = TrafficLight.UNKNOWN
+        img_width, img_height = 150, 150
+        for (x,y,w,h) in box:
+            # FP filter
+            dh=int(round(h*0.1))
+            line = cv_image[(y+dh):(y+h-dh),int(round(x+w/2)),:]
+            if np.std(line) < 32: # Magic number out of experiments
+#                print "False Detection!"
+                continue # FP detection
+            tl_img = cv_image[y:(y + h), x:(x + w)]
+            tl_img_rgb = cv2.resize(tl_img, (img_width, img_height))
+            tl_img_rgb = cv2.cvtColor(tl_img_rgb , cv2.COLOR_BGR2RGB)
+            tl_img_data = img_to_array(tl_img_rgb)
+            tl_img_data = np.expand_dims(tl_img_data, axis=0)
+            with self.graph.as_default():
+                predictedclass = self.test_model.predict_classes(tl_img_data, verbose=False)
+
+            if int(predictedclass) == 2:
+                state = TrafficLight.YELLOW
+#                cv2.rectangle(clonned, (x,y), (x+w,y+h), (0, 255, 255), thickness=3)
+#                print "Yellow Light"
+                continue
+            elif int(predictedclass) == 1:
+                state = TrafficLight.GREEN
+#                cv2.rectangle(clonned, (x,y), (x+w,y+h), (0, 255, 0), thickness=3)
+#                print "Green light"
+                continue
+            elif int(predictedclass) == 3:
+                state = TrafficLight.RED
+#                cv2.rectangle(clonned, (x,y), (x+w,y+h), (0, 0, 255), thickness=3)
+#                print "Red Light"
+                break  # Red has high priority, so, return it if it is seen
+            else:
+#                cv2.rectangle(clonned, (x,y), (x+w,y+h), (0, 0, 0), thickness=3)
+                continue
+
+#        cv2.imwrite('/home/student/imgs/img_{num:03d}.jpg'.format(num=self.save_counter), cv_image)
+#        self.save_counter += 1
+
+        return state
