@@ -83,8 +83,6 @@ class DBWNode(object):
                                                                     self.dbw_enabled)
                 if self.dbw_enabled == True:
                   self.publish(throttle, brake, steer)
-                else:
-                  self.controller.reset_pid()
             rate.sleep()
 
     def publish(self, throttle, brake, steer):

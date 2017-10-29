@@ -13,9 +13,8 @@ import math
 import numpy as np
 import yaml
 
-LOGINFO = True
 STATE_COUNT_THRESHOLD = 6
-MAX_DIST = 100.0
+MAX_DIST              = 1000.0
 
 
 class Point:
@@ -33,7 +32,8 @@ class TLDetector(object):
         self.lights = []
 
         self.bridge = CvBridge()
-        self.light_classifier = TLClassifier()
+        self.experiment_environment= rospy.get_param('/experiment_environment',"simulator")
+        self.light_classifier = TLClassifier(self.experiment_environment)
         self.listener = tf.TransformListener()
 
         self.state = TrafficLight.UNKNOWN
@@ -41,8 +41,8 @@ class TLDetector(object):
         self.last_wp = -1
         self.state_count = 0
 
-        self.curr_pose = rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb)
-        self.base_wp = rospy.Subscriber('/base_waypoints', Lane, self.waypoints_cb)
+        sub1 = rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb)
+        sub2 = rospy.Subscriber('/base_waypoints', Lane, self.waypoints_cb)
 
         '''
         /vehicle/traffic_lights helps you acquire an accurate ground truth data source for the traffic light
@@ -68,7 +68,6 @@ class TLDetector(object):
 
     def waypoints_cb(self, waypoints):
         self.waypoints = waypoints.waypoints
-        self.base_wp.unregister()
 
     def traffic_cb(self, msg):
         self.lights = msg.lights
@@ -177,14 +176,6 @@ class TLDetector(object):
             x = -fx * point_veh[1]/point_veh[0] + 0.5*image_width
             y = -fy * point_veh[2]/point_veh[0] + 0.5*image_height
 
-
-            if LOGINFO:
-              rospy.loginfo('trans: {}'.format(trans))
-              rospy.loginfo('rot: {}'.format(rot))
-              rospy.loginfo('point_x: {}, point_y: {} point_z: {}'.format(point_in_world.x, point_in_world.y, point_in_world.z))
-              rospy.loginfo('point_x_veh: {}, point_y_veh: {} point_z_veh: {}'.format(point_veh[0], point_veh[1], point_veh[2]))
-              rospy.loginfo('x_img: {}, y_img: {}'.format(x, y))
-
         return (x, y)
 
     def check_inside_image(self, x, y):
@@ -210,12 +201,10 @@ class TLDetector(object):
 
         self.camera_image.encoding = "rgb8"
         cv_image = self.bridge.imgmsg_to_cv2(self.camera_image, "bgr8")
-        '''
 
         x, y = self.project_to_image_plane(light.pose.pose.position)
 
         #TODO use light location to zoom in on traffic light in image
-
         image_width  = self.config['camera_info']['image_width']
         image_height = self.config['camera_info']['image_height']
 
@@ -226,26 +215,18 @@ class TLDetector(object):
         bottom = int(y + h_img)
         left   = int(x - w_img)
         right  = int(x + w_img)
-        '''
 
-        tlDetect = TrafficLight.UNKNOWN
-        tlDetect = self.light_classifier.get_traffic_classification(cv_image)
+        tlState = TrafficLight.UNKNOWN
+        tlState = self.light_classifier.get_classification(cv_image)
 
-        # if self.check_inside_image(left,top) and self.check_inside_image(bottom, right):
+        #if self.check_inside_image(left,top) and self.check_inside_image(bottom, right):
 
-            # Publish the cropped image on a ROS topic for LOGINFO purposes
-            # if LOGINFO:
-            #    self.publish_roi_image(roi)
-
-            #tlDetect = self.light_classifier.get_classification(roi)
+            #tlState = self.light_classifier.get_classification(roi)
 
         #Get classification
+        #rospy.loginfo('tlState: {}'.format(light.state))
 
-        rospy.loginfo('tlDetect: {}'.format(tlDetect))
-        #rospy.loginfo('tlDetect: {}'.format(light.state))
-
-        #return light.state #tlDetect
-        return tlDetect
+        return light.state #tlState
 
     def publish_roi_image(self, img):
 
@@ -292,11 +273,7 @@ class TLDetector(object):
                     light = self.lights[i]
                     light_distance_squared = (light_point.x-self.pose.pose.position.x)**2 + (light_point.y-self.pose.pose.position.y)**2
 
-
         if light:
-            if LOGINFO:
-                rospy.loginfo('light_wp: {}'.format(light_wp))
-
 
             if (light_distance_squared >= MAX_DIST*MAX_DIST):
                 return -1, TrafficLight.UNKNOWN

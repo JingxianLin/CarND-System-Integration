@@ -1,8 +1,0 @@
-prefix=/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel
-
-Name: twist_controller
-Description: Description of twist_controller
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/metal-box/Desktop/succesfull_review/CarND-Capstone-release-1.1/ros/devel/lib 
-Requires: 
