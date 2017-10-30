@@ -7,4 +7,13 @@ Pillow>=2.2.1
 scipy
 keras
 tensorflow
+tensorboard==1.0.0a6
 h5py
+pytest
+future
+six
+rospy_message_converter
+backports.functools_lru_cache
+numba
+numpy-quaternion
+pprofile

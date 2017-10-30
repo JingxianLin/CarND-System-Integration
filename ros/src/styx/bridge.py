@@ -123,7 +123,7 @@ class Bridge(object):
             orientation,
             rospy.Time.now(),
             name,
-            "/world")
+            "world")
 
     def publish_odometry(self, data):
         pose = self.create_pose(data['x'], data['y'], data['z'], data['yaw'])
